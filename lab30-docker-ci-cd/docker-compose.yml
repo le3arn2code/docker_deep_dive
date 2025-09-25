@@ -1,0 +1,14 @@
+# docker-compose.yml for Lab 30 – Flask + Redis CI/CD
+
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:latest
